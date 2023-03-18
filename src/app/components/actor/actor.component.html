@@ -1,0 +1,9 @@
+<a class="thumbnail card p-2" (click)="goToDetails()">
+    <div>
+        <h3>{{actor?.primaryName}}</h3>
+        <hr>
+        <p>{{ actor.birthYear }}-{{ actor.deathYear }}</p>
+        <p> NB Titres : {{actor.knownForTitles.length}} </p>
+    </div>
+
+</a>

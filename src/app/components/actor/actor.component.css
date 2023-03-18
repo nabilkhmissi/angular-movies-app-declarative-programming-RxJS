@@ -1,0 +1,28 @@
+.thumbnail {
+    display: flex;
+    height: 250px;
+    transition: all .2s ease-in-out;
+    overflow: hidden;
+}
+
+a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.thumbnail:hover {
+    transform: scale(1.05);
+}
+
+.thumbnail a img {
+    width: 100%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}

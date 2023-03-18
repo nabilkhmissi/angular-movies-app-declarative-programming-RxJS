@@ -1,0 +1,27 @@
+ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+li {}
+
+a {
+    padding: 10px 0;
+    display: block;
+    text-align: center;
+    transition: .2s ease-in-out;
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    background-color: rgb(218, 218, 218);
+    cursor: pointer;
+    padding-left: 13px;
+}
+
+.active{
+    background-color: rgb(218, 218, 218);
+    padding-left: 15px;
+}

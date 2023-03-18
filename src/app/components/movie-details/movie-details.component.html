@@ -1,0 +1,40 @@
+<div *ngIf="movie$ | async as movie">
+    <div class="row" style="height: 300px;">
+        <img style="height: 300px;object-fit: cover;" [src]="movie.primaryImage.url">
+        <div class="gr"
+            style="height: 300px;background: linear-gradient(to top, rgba(255, 255, 255, 0.836) 0%,rgba(255, 255, 255, 0) 100%);transform: translateY(-100%);">
+        </div>
+    </div>
+    <div class=" row mt-3" style="padding: 0 50px;">
+        <div class="col-md-3" style="transform: translateY(-50%);">
+            <img class="card-img-top h-100" [src]="movie.primaryImage.url" [alt]="movie.titleText.text">
+        </div>
+        <div class="col-md-9">
+            <div class="d-flex flex-row align-items-center">
+                <div class="d-flex me-2">
+                    <h1>{{ movie.titleText.text }}</h1>
+                </div>
+                <div class="d-flex">
+                    <span class="btn btn-light b-border">{{ movie.titleType.text }}</span>
+                </div>
+            </div>
+
+            <div style="display:flex;" class="ps-2 my-2">
+                <div class="row d-inline-flex" *ngIf="movie.titleType.categories as cat">
+                    <span class="category" *ngFor="let c of cat">
+                        <div class="col">
+                        </div>{{ c.value }}
+                    </span>
+                </div>
+            </div>
+            <p>{{ movie.primaryImage?.caption?.plainText }}</p>
+            <small *ngIf="movie.releaseYear.year">Release year : {{ movie.releaseYear.year }}</small>
+            <p><span>Votes : <strong>{{ movie.rating.numVotes}} </strong> votes </span></p>
+            <div class="d-flex" *ngIf="movie.rating">
+                <span class="me-2">Rating :</span>
+                <span style="display: flex;" *ngFor="let r of rating">⭐</span>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
